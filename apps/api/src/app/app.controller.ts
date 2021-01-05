@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Logger } from '@nestjs/common';
 
 import { Message } from '@nx-test/api-interfaces';
 
@@ -10,6 +10,7 @@ export class AppController {
 
   @Get('hello')
   getData(): Message {
+    Logger.log('Get Hello DATA: ', Logger.getTimestamp());
     return this.appService.getData();
   }
 }
