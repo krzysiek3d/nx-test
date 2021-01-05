@@ -10,6 +10,7 @@ export class AppController {
 
   @Get('hello')
   getData(): Message {
+    Logger.log('TEST_VAR: ', process.env.TEST_VAR);
     Logger.log('Get Hello DATA: ', Logger.getTimestamp());
     return this.appService.getData();
   }
